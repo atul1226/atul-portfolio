@@ -75,6 +75,11 @@
           <p class="text-gray-600">October 2024 - December 2024</p>
           <p class="text-gray-700">Collected and analyzed data, prepared reports for stakeholders, and collaborated with departments to support data-driven decisions.</p>
         </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-800">QA Intern, CourseHero</h3>
+          <p class="text-gray-600">March 2024 - November 2024</p>
+          <p class="text-gray-700">Worked as a Quality Assurance Intern, testing educational content, identifying bugs, and ensuring high-quality deliverables. Collaborated with cross-functional teams to improve platform reliability and user experience.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -86,7 +91,11 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="project-card bg-white p-6 rounded-lg shadow-lg">
           <h3 class="text-xl font-semibold text-gray-800">Optimizing Operational Efficiency at Expert Electrical</h3>
-          <img src="profit_expenditure.png" alt="Profit vs Expenditure" class="w-full h-48 object-cover mb-4">
+          <!-- Repo link instead of image -->
+          <a href="https://github.com/atul1226/Capstone_project" target="_blank"
+             class="inline-block bg-teal-600 text-white px-4 py-2 rounded-lg mb-4 hover:bg-teal-700 transition">
+            View Capstone Project Repository
+          </a>
           <p class="text-gray-700">Analyzed sales, inventory, and cost data to address stagnant profits, inefficient inventory, and rising costs. Key findings include 66% inventory utilization and seasonal profit trends. Provided recommendations like improved forecasting and cost management. Tools: Python, Excel, Google Sheets.</p>
           <button onclick="toggleDetails('capstone-details')" class="view-details-btn mt-2">View Details</button>
           <div id="capstone-details" class="hidden mt-4">
@@ -158,9 +167,19 @@
 
   <!-- Footer Section -->
   <footer class="py-4 text-white text-center" style="background-color: #3A3F40;">
-  <p class="text-lg">Last updated: 10:19 AM IST, Sunday, June 01, 2025</p>
-</footer>
+    <p class="text-lg">Last updated: 10:19 AM IST, Sunday, June 01, 2025</p>
+  </footer>
 
-  <script src="script.js"></script>
+  <script>
+    // Toggle details for project
+    function toggleDetails(id) {
+      var el = document.getElementById(id);
+      if (el.classList.contains('hidden')) {
+        el.classList.remove('hidden');
+      } else {
+        el.classList.add('hidden');
+      }
+    }
+  </script>
 </body>
 </html>
