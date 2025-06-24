@@ -1,9 +1,8 @@
 :root {
-  /* Accent Colors */
-  --accent-pink: #F06292;    /* Light Pink */
-  --accent-teal: #26A69A;    /* Light Teal */
-  --accent-pink-dark: #F48FB1; /* Softer Pink for Dark Mode */
-  --accent-teal-dark: #80CBC4; /* Softer Teal for Dark Mode */
+  --accent-pink: #F06292;
+  --accent-teal: #26A69A;
+  --accent-pink-dark: #F48FB1;
+  --accent-teal-dark: #80CBC4;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,10 +12,12 @@
   }
 }
 
-/* Custom Hover Effects - More Specific Selectors */
+/* NAVIGATION HOVER EFFECTS */
 nav .nav-link {
   position: relative;
-  transition: transform 0.3s ease, color 0.3s ease !important;
+  transition: transform 0.3s, color 0.3s !important;
+  color: inherit;
+  z-index: 1;
 }
 
 nav .nav-link::after {
@@ -27,50 +28,59 @@ nav .nav-link::after {
   bottom: -4px;
   left: 0;
   background-color: var(--accent-pink) !important;
-  transition: width 0.3s ease;
+  transition: width 0.3s;
+  z-index: 2;
 }
 
-nav .nav-link:hover {
+nav .nav-link:hover,
+nav .nav-link:focus {
   transform: scale(1.1) !important;
   color: var(--accent-pink) !important;
 }
 
-nav .nav-link:hover::after {
+nav .nav-link:hover::after,
+nav .nav-link:focus::after {
   width: 100%;
 }
 
-/* Skill Cards - Override Tailwind background */
+/* SKILL CARD HOVER EFFECTS */
 .skill-card {
+  transition: transform 0.3s, box-shadow 0.3s !important;
+  cursor: pointer;
   position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  z-index: 1;
 }
 
-.skill-card:hover {
+.skill-card:hover,
+.skill-card:focus {
   transform: scale(1.05) rotate(2deg) !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
-  background-color: #1a8b7a !important; /* Darker teal on hover */
+  box-shadow: 0 8px 24px 0 rgba(38, 166, 154, 0.25) !important;
+  background-color: var(--accent-teal) !important;
+  color: #fff !important;
 }
 
-/* Project Cards - More visible effects */
+/* PROJECT CARD HOVER EFFECTS */
 .project-card {
+  transition: transform 0.3s, border 0.3s, box-shadow 0.3s !important;
+  border: 2px solid transparent;
   position: relative;
-  transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease !important;
+  z-index: 1;
 }
 
-.project-card:hover {
+.project-card:hover,
+.project-card:focus {
   transform: scale(1.03) !important;
-  border: 3px solid var(--accent-teal) !important;
-  box-shadow: 0 0 20px var(--accent-teal) !important;
-  background-color: #f0fffe !important; /* Very light teal background */
+  border: 2px solid var(--accent-teal) !important;
+  box-shadow: 0 0 16px 2px var(--accent-teal) !important;
+  background-color: #e0f7fa !important;
 }
 
-/* View Details Button */
+/* VIEW DETAILS BUTTON HOVER EFFECTS */
 .view-details-btn {
   position: relative;
-  transition: color 0.3s ease !important;
-  display: inline-block;
-  padding: 8px 16px;
-  border-radius: 4px;
+  transition: color 0.3s !important;
+  z-index: 1;
+  overflow: hidden;
 }
 
 .view-details-btn::before {
@@ -80,28 +90,35 @@ nav .nav-link:hover::after {
   left: 50%;
   width: 0;
   height: 0;
-  background: rgba(38, 166, 154, 0.3);
+  background: rgba(38, 166, 154, 0.15);
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  transition: width 0.4s ease, height 0.4s ease;
+  transition: width 0.4s, height 0.4s;
   z-index: -1;
 }
 
-.view-details-btn:hover::before {
-  width: 100%;
-  height: 100%;
-  border-radius: 4px;
+@media (prefers-color-scheme: dark) {
+  .view-details-btn::before {
+    background: rgba(128, 203, 196, 0.18);
+  }
 }
 
-.view-details-btn:hover {
+.view-details-btn:hover::before,
+.view-details-btn:focus::before {
+  width: 120%;
+  height: 120%;
+}
+
+.view-details-btn:hover,
+.view-details-btn:focus {
   color: var(--accent-teal) !important;
-  background-color: rgba(38, 166, 154, 0.1) !important;
 }
 
-/* Contact Links */
+/* CONTACT LINK HOVER EFFECTS */
 .contact-link {
   position: relative;
-  transition: color 0.3s ease !important;
+  transition: color 0.3s !important;
+  color: inherit;
 }
 
 .contact-link::after {
@@ -112,20 +129,15 @@ nav .nav-link:hover::after {
   bottom: -2px;
   left: 0;
   background-color: var(--accent-teal) !important;
-  transition: width 0.3s ease;
+  transition: width 0.3s;
 }
 
-.contact-link:hover {
+.contact-link:hover,
+.contact-link:focus {
   color: var(--accent-teal) !important;
 }
 
-.contact-link:hover::after {
+.contact-link:hover::after,
+.contact-link:focus::after {
   width: 100%;
-}
-
-/* Additional enhancement - subtle nav background change on hover */
-nav .nav-link:hover {
-  background-color: rgba(240, 98, 146, 0.1) !important;
-  border-radius: 4px;
-  padding: 4px 8px;
 }
