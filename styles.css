@@ -1,3 +1,18 @@
+:root {
+  /* Accent Colors */
+  --accent-pink: #F06292;    /* Light Pink */
+  --accent-teal: #26A69A;    /* Light Teal */
+  --accent-pink-dark: #F48FB1; /* Softer Pink for Dark Mode */
+  --accent-teal-dark: #80CBC4; /* Softer Teal for Dark Mode */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent-pink: var(--accent-pink-dark);
+    --accent-teal: var(--accent-teal-dark);
+  }
+}
+
 /* Custom Hover Effects */
 .nav-link {
   position: relative;
@@ -11,7 +26,7 @@
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #F06292; /* Pink-300 for underline */
+  background-color: var(--accent-pink); /* Pink underline */
   transition: width 0.3s ease;
 }
 
@@ -38,8 +53,8 @@
 
 .project-card:hover {
   transform: scale(1.03);
-  border: 2px solid #26A69A; /* Teal-400 for glowing border */
-  box-shadow: 0 0 10px #26A69A;
+  border: 2px solid var(--accent-teal); /* Teal border */
+  box-shadow: 0 0 10px var(--accent-teal);
 }
 
 .view-details-btn {
@@ -54,10 +69,16 @@
   left: 50%;
   width: 0;
   height: 0;
-  background: rgba(38, 166, 154, 0.2); /* Teal-400 with opacity */
+  background: rgba(38, 166, 154, 0.2); /* Teal with opacity */
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: width 0.4s ease, height 0.4s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  .view-details-btn::before {
+    background: rgba(128, 203, 196, 0.2); /* Softer teal for dark mode */
+  }
 }
 
 .view-details-btn:hover::before {
@@ -66,7 +87,7 @@
 }
 
 .view-details-btn:hover {
-  color: #26A69A; /* Teal-400 */
+  color: var(--accent-teal);
 }
 
 .contact-link {
@@ -81,12 +102,12 @@
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: #26A69A; /* Teal-400 for underline */
+  background-color: var(--accent-teal); /* Teal underline */
   transition: width 0.3s ease;
 }
 
 .contact-link:hover {
-  color: #26A69A; /* Teal-400 */
+  color: var(--accent-teal);
 }
 
 .contact-link:hover::after {
