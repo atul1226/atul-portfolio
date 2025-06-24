@@ -13,53 +13,64 @@
   }
 }
 
-/* Custom Hover Effects */
-.nav-link {
+/* Custom Hover Effects - More Specific Selectors */
+nav .nav-link {
   position: relative;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease !important;
 }
 
-.nav-link::after {
+nav .nav-link::after {
   content: '';
   position: absolute;
   width: 0;
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: var(--accent-pink); /* Pink underline */
+  background-color: var(--accent-pink) !important;
   transition: width 0.3s ease;
 }
 
-.nav-link:hover {
-  transform: scale(1.1);
+nav .nav-link:hover {
+  transform: scale(1.1) !important;
+  color: var(--accent-pink) !important;
 }
 
-.nav-link:hover::after {
+nav .nav-link:hover::after {
   width: 100%;
 }
 
+/* Skill Cards - Override Tailwind background */
 .skill-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 .skill-card:hover {
-  transform: scale(1.05) rotate(2deg);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05) rotate(2deg) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
+  background-color: #1a8b7a !important; /* Darker teal on hover */
 }
 
+/* Project Cards - More visible effects */
 .project-card {
-  transition: transform 0.3s ease, border 0.3s ease;
+  position: relative;
+  transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease !important;
 }
 
 .project-card:hover {
-  transform: scale(1.03);
-  border: 2px solid var(--accent-teal); /* Teal border */
-  box-shadow: 0 0 10px var(--accent-teal);
+  transform: scale(1.03) !important;
+  border: 3px solid var(--accent-teal) !important;
+  box-shadow: 0 0 20px var(--accent-teal) !important;
+  background-color: #f0fffe !important; /* Very light teal background */
 }
 
+/* View Details Button */
 .view-details-btn {
   position: relative;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease !important;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 4px;
 }
 
 .view-details-btn::before {
@@ -69,30 +80,28 @@
   left: 50%;
   width: 0;
   height: 0;
-  background: rgba(38, 166, 154, 0.2); /* Teal with opacity */
+  background: rgba(38, 166, 154, 0.3);
   border-radius: 50%;
   transform: translate(-50%, -50%);
   transition: width 0.4s ease, height 0.4s ease;
-}
-
-@media (prefers-color-scheme: dark) {
-  .view-details-btn::before {
-    background: rgba(128, 203, 196, 0.2); /* Softer teal for dark mode */
-  }
+  z-index: -1;
 }
 
 .view-details-btn:hover::before {
-  width: 50px;
-  height: 50px;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
 }
 
 .view-details-btn:hover {
-  color: var(--accent-teal);
+  color: var(--accent-teal) !important;
+  background-color: rgba(38, 166, 154, 0.1) !important;
 }
 
+/* Contact Links */
 .contact-link {
   position: relative;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease !important;
 }
 
 .contact-link::after {
@@ -102,14 +111,21 @@
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: var(--accent-teal); /* Teal underline */
+  background-color: var(--accent-teal) !important;
   transition: width 0.3s ease;
 }
 
 .contact-link:hover {
-  color: var(--accent-teal);
+  color: var(--accent-teal) !important;
 }
 
 .contact-link:hover::after {
   width: 100%;
+}
+
+/* Additional enhancement - subtle nav background change on hover */
+nav .nav-link:hover {
+  background-color: rgba(240, 98, 146, 0.1) !important;
+  border-radius: 4px;
+  padding: 4px 8px;
 }
