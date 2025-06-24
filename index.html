@@ -6,35 +6,61 @@
   <title>Atul Pandey's Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-color: #1E40AF; /* Bold blue background */
+      color: #F9FAFB; /* Light text for contrast */
+    }
+    .section {
+      padding: 2rem;
+      border-radius: 0.5rem;
+      background-color: rgba(255, 255, 255, 0.1); /* Subtle white overlay */
+    }
+    h1, h2, h3 {
+      color: #60A5FA; /* Lighter blue for headings */
+    }
+    .nav-link, .contact-link {
+      color: #93C5FD; /* Soft blue for links */
+    }
+    .nav-link:hover, .contact-link:hover {
+      color: #BFDBFE; /* Lighter hover effect */
+    }
+    .skill-card, .project-card, .education-item, .experience-item {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 1rem;
+      border-radius: 0.375rem;
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation -->
-  <nav>
-    <ul class="nav-list">
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#experience" class="nav-link">Experience</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#education" class="nav-link">Education</a></li>
-      <li><a href="#achievements" class="nav-link">Achievements</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
+  <nav class="p-4">
+    <ul class="nav-list flex space-x-6">
+      <li><a href="#home" class="nav-link font-bold">Home</a></li>
+      <li><a href="#about" class="nav-link font-bold">About</a></li>
+      <li><a href="#skills" class="nav-link font-bold">Skills</a></li>
+      <li><a href="#experience" class="nav-link font-bold">Experience</a></li>
+      <li><a href="#projects" class="nav-link font-bold">Projects</a></li>
+      <li><a href="#education" class="nav-link font-bold">Education</a></li>
+      <li><a href="#achievements" class="nav-link font-bold">Achievements</a></li>
+      <li><a href="#contact" class="nav-link font-bold">Contact</a></li>
     </ul>
   </nav>
 
   <!-- Home Section -->
   <section id="home" class="section hero-section">
-    <div class="container">
-      <h1>Welcome to Atul Pandey's Portfolio</h1>
-      <p>Data Analyst | Passionate about Driving Business Insights through Data</p>
+    <div class="container mx-auto text-center py-12">
+      <h1 class="text-4xl">Welcome to Atul Pandey's Portfolio</h1>
+      <p class="text-xl mt-4">Data Analyst | Passionate about Driving Business Insights through Data</p>
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about" class="section about-section">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>
+    <div class="container mx-auto">
+      <h2 class="text-3xl mb-4">About Me</h2>
+      <p class="text-lg">
         I'm Atul Pandey, a skilled data analyst with expertise in verifying data accuracy, generating actionable insights, and creating customized reports. Proficient in Python, Java, and MS Office, I excel at analyzing complex datasets and optimizing business processes. My commitment to data confidentiality and quality improvement drives my work in delivering impactful solutions.
       </p>
     </div>
@@ -42,49 +68,49 @@
 
   <!-- Skills Section -->
   <section id="skills" class="section skills-section">
-    <div class="container">
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li class="skill-card">Python</li>
-        <li class="skill-card">Java</li>
-        <li class="skill-card">MS Office</li>
-        <li class="skill-card">Data Management</li>
-        <li class="skill-card">Strategic Thinking</li>
-        <li class="skill-card">Analytical Skills</li>
-        <li class="skill-card">Report Writing</li>
-        <li class="skill-card">Training & Mentoring</li>
-        <li class="skill-card">SQL</li>
+    <div class="container mx-auto">
+      <h2 class="text-3xl mb-4">Skills</h2>
+      <ul class="skills-list grid grid-cols-3 gap-4">
+        <li class="skill-card text-center p-2">Python</li>
+        <li class="skill-card text-center p-2">Java</li>
+        <li class="skill-card text-center p-2">MS Office</li>
+        <li class="skill-card text-center p-2">Data Management</li>
+        <li class="skill-card text-center p-2">Strategic Thinking</li>
+        <li class="skill-card text-center p-2">Analytical Skills</li>
+        <li class="skill-card text-center p-2">Report Writing</li>
+        <li class="skill-card text-center p-2">Training & Mentoring</li>
+        <li class="skill-card text-center p-2">SQL</li>
       </ul>
     </div>
   </section>
 
   <!-- Experience Section -->
   <section id="experience" class="section experience-section">
-    <div class="container">
-      <h2>Experience</h2>
+    <div class="container mx-auto">
+      <h2 class="text-3xl mb-4">Experience</h2>
       <div class="experience-item">
-        <h3>ETL / Data Scraping Intern, VANEL TECH INDIA PRIVATE LIMITED</h3>
-        <p><em>June 2025 - Present</em></p>
+        <h3 class="text-xl">ETL / Data Scraping Intern, VANEL TECH INDIA PRIVATE LIMITED</h3>
+        <p class="italic">June 2025 - Present</p>
         <p>Performing ETL and data scraping tasks, automating data collection and transformation, maintaining data confidentiality, and preparing reports as part of the internship program.</p>
       </div>
       <div class="experience-item">
-        <h3>Data Analyst, EAT English</h3>
-        <p><em>March 2025 - June 2025</em></p>
+        <h3 class="text-xl">Data Analyst, EAT English</h3>
+        <p class="italic">March 2025 - June 2025</p>
         <p>Tracked student engagement and response accuracy, generated customized learning paths, and analyzed voice interactions for clarity and effectiveness.</p>
       </div>
       <div class="experience-item">
-        <h3>Data Analyst, College Dunia</h3>
-        <p><em>January 2025 - February 2025</em></p>
+        <h3 class="text-xl">Data Analyst, College Dunia</h3>
+        <p class="italic">January 2025 - February 2025</p>
         <p>Developed predictive models, forecasted trends, and identified process improvements to optimize operations.</p>
       </div>
       <div class="experience-item">
-        <h3>Data Analyst, Al Shajarah (Remote, Kuwait)</h3>
-        <p><em>October 2024 - December 2024</em></p>
+        <h3 class="text-xl">Data Analyst, Al Shajarah (Remote, Kuwait)</h3>
+        <p class="italic">October 2024 - December 2024</p>
         <p>Collected and analyzed data, prepared reports for stakeholders, and collaborated with departments to support data-driven decisions.</p>
       </div>
       <div class="experience-item">
-        <h3>QA Intern, CourseHero</h3>
-        <p><em>March 2024 - November 2024</em></p>
+        <h3 class="text-xl">QA Intern, CourseHero</h3>
+        <p class="italic">March 2024 - November 2024</p>
         <p>Worked as a Quality Assurance Intern, testing educational content, identifying bugs, and ensuring high-quality deliverables. Collaborated with cross-functional teams to improve platform reliability and user experience.</p>
       </div>
     </div>
@@ -92,24 +118,24 @@
 
   <!-- Projects Section -->
   <section id="projects" class="section projects-section">
-    <div class="container">
-      <h2>Projects</h2>
+    <div class="container mx-auto">
+      <h2 class="text-3xl mb-4">Projects</h2>
       <div class="project-card">
-        <h3>Optimizing Operational Efficiency at Expert Electrical</h3>
-        <a href="https://github.com/atul1226/Capstone_project" target="_blank" class="view-details-btn">View Capstone Project Repository</a>
+        <h3 class="text-xl">Optimizing Operational Efficiency at Expert Electrical</h3>
+        <a href="https://github.com/atul1226/Capstone_project" target="_blank" class="view-details-btn block mt-2">View Capstone Project Repository</a>
         <p>
           Analyzed sales, inventory, and cost data to address stagnant profits, inefficient inventory, and rising costs. Key findings include 66% inventory utilization and seasonal profit trends. Provided recommendations like improved forecasting and cost management. Tools: Python, Excel, Google Sheets.
         </p>
-        <button onclick="toggleDetails('capstone-details')" class="view-details-btn">View Details</button>
+        <button onclick="toggleDetails('capstone-details')" class="view-details-btn mt-2">View Details</button>
         <div id="capstone-details" class="hidden">
           <p><strong>Key Insights:</strong></p>
-          <ul>
+          <ul class="list-disc pl-5">
             <li>Revenue peaks in March, June, September due to seasonal demand.</li>
             <li>34% excess inventory indicates overstocking.</li>
             <li>Material costs (~84.1%) dominate expenses.</li>
           </ul>
           <p><strong>Recommendations:</strong></p>
-          <ul>
+          <ul class="list-disc pl-5">
             <li>Negotiate supplier rates for peak seasons.</li>
             <li>Enhance demand forecasting to reduce overstock.</li>
             <li>Optimize logistics schedules.</li>
@@ -117,7 +143,7 @@
         </div>
       </div>
       <div class="project-card">
-        <h3>Krayonnz Marketing Project</h3>
+        <h3 class="text-xl">Krayonnz Marketing Project</h3>
         <p>Led a major marketing project, successfully completing it before the deadline, showcasing leadership and project management skills.</p>
       </div>
     </div>
@@ -125,29 +151,29 @@
 
   <!-- Education Section -->
   <section id="education" class="section education-section">
-    <div class="container">
-      <h2>Education</h2>
+    <div class="container mx-auto">
+      <h2 class="text-3xl mb-4">Education</h2>
       <div class="education-item">
-        <h3>B.S. in Data Science and Application</h3>
-        <p><em>Indian Institute of Technology, Madras, 2022 - Present</em></p>
+        <h3 class="text-xl">B.S. in Data Science and Application</h3>
+        <p class="italic">Indian Institute of Technology, Madras, 2022 - Present</p>
         <p>Specializing in data analytics and predictive modeling to derive actionable insights from complex datasets.</p>
       </div>
       <div class="education-item">
-        <h3>B.Sc. in Chemistry (Hons)</h3>
-        <p><em>Binod Bihari Mahto Koylanchal University, 2021 - 2024</em></p>
+        <h3 class="text-xl">B.Sc. in Chemistry (Hons)</h3>
+        <p class="italic">Binod Bihari Mahto Koylanchal University, 2021 - 2024</p>
       </div>
       <div class="education-item">
-        <h3>Intermediate</h3>
-        <p><em>Kids Garden Senior Secondary School, Dhanbad Jharia, 2021</em></p>
+        <h3 class="text-xl">Intermediate</h3>
+        <p class="italic">Kids Garden Senior Secondary School, Dhanbad Jharia, 2021</p>
       </div>
     </div>
   </section>
 
   <!-- Achievements Section -->
   <section id="achievements" class="section achievements-section">
-    <div class="container">
-      <h2>Achievements</h2>
-      <ul>
+    <div class="container mx-auto">
+      <h2 class="text-3xl mb-4">Achievements</h2>
+      <ul class="list-disc pl-5">
         <li>Rank Holder at Kids Garden Senior Secondary School.</li>
         <li>Won 1st place in Inter High Debate representing school.</li>
         <li>Led and completed a major marketing project for Krayonnz before the deadline.</li>
@@ -157,8 +183,8 @@
 
   <!-- Contact Section -->
   <section id="contact" class="section contact-section">
-    <div class="container">
-      <h2>Contact Me</h2>
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl mb-4">Contact Me</h2>
       <p>Email: <a href="mailto:atul1226@hotmail.com" class="contact-link">atul1226@hotmail.com</a></p>
       <p>IIT Email: <a href="mailto:22F2000145@ds.study.iitm.ac.in" class="contact-link">22F2000145@ds.study.iitm.ac.in</a></p>
       <p><a href="resume.pdf" download class="contact-link">Download Resume</a></p>
@@ -166,8 +192,8 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
-    <p>Last updated: 07:40 PM IST, Wednesday, June 18, 2025</p>
+  <footer class="footer p-4 text-center">
+    <p>Last updated: 09:54 PM IST, Tuesday, June 24, 2025</p>
   </footer>
 
   <script>
